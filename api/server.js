@@ -13,20 +13,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("src"));
 const upload = multer({ dest: "uploads/" });
 
-const db = new pg.Client({
-  user: process.env.PG_USER,
-  host: "localhost",
-  database: process.env.PG_DATABASE,
-  password: process.env.PG_PASSWORD,
-  port: 5432,
+const postgresUrl = process.env.POSTGRES_URL;
+
+// Create a new PostgreSQL client instance
+const db = new Client({
+  connectionString: postgresUrl,
+  ssl: {
+    rejectUnauthorized: false, // Only necessary if your PostgreSQL server requires SSL
+  },
 });
+
+db.connect();
 
 let loginId;
 let logFalseOrTrue;
 let isPassSame = true;
 let isItLogin = false;
 let loggedIn = false;
-db.connect();
 
 let exitClicked = false;
 
