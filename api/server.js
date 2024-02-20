@@ -23,7 +23,9 @@ const db = new pg.Client({
   },
 });
 
-db.connect();
+db.connect()
+  .then(() => console.log("Connected to PostgreSQL database"))
+  .catch((err) => console.error("Error connecting to database", err));
 
 let loginId;
 let logFalseOrTrue;
