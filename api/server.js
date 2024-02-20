@@ -16,7 +16,7 @@ const upload = multer({ dest: "uploads/" });
 const postgresUrl = process.env.POSTGRES_URL;
 
 // Create a new PostgreSQL pool instance
-const db = new pg.Pool({
+const db = new pg.Client({
   connectionString: postgresUrl,
   ssl: false,
 });
