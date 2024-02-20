@@ -16,7 +16,7 @@ const upload = multer({ dest: "uploads/" });
 const postgresUrl = process.env.POSTGRES_URL;
 
 // Create a new PostgreSQL client instance
-const db = new Client({
+const db = new pg.Client({
   connectionString: postgresUrl,
   ssl: {
     rejectUnauthorized: false, // Only necessary if your PostgreSQL server requires SSL
