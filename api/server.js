@@ -7,18 +7,18 @@ dot.config();
 
 const app = express();
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("src"));
 const upload = multer({ dest: "uploads/" });
 
-const db = new pg.Client({
-  user: process.env.PG_USER,
-  host: "localhost",
-  database: process.env.PG_DATABASE,
-  password: process.env.PG_PASSWORD,
-  port: 5432,
+const postgresUrl = process.env.POSTGRES_URL;
+
+// Create a new PostgreSQL pool instance
+const db = new pg.Pool({
+  connectionString: postgresUrl,
+  ssl: false,
 });
 
 let loginId;

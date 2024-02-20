@@ -10,8 +10,8 @@
   },
   "scripts": {
     "test": "echo \"Error:no test specified\" && exit 1",
-    "start": "node server",
-    "dev": "nodemon server --ignore client"
+    "start": "node server.js",
+    "dev": "nodemon server.js --ignore client"
   },
   "name": "api",
   "version": "1.0.0",
