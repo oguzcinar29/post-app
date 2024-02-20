@@ -13,25 +13,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("src"));
 const upload = multer({ dest: "uploads/" });
 
-const postgresUrl = process.env.POSTGRES_URL;
-
-// Create a new PostgreSQL client instance
 const db = new pg.Client({
-  connectionString: postgresUrl,
-  ssl: {
-    rejectUnauthorized: false, // Only necessary if your PostgreSQL server requires SSL
-  },
+  user: process.env.PG_USER,
+  host: "localhost",
+  database: process.env.PG_DATABASE,
+  password: process.env.PG_PASSWORD,
+  port: 5432,
 });
-
-db.connect()
-  .then(() => console.log("Connected to PostgreSQL database"))
-  .catch((err) => console.error("Error connecting to database", err));
 
 let loginId;
 let logFalseOrTrue;
 let isPassSame = true;
 let isItLogin = false;
 let loggedIn = false;
+db.connect();
 
 let exitClicked = false;
 
