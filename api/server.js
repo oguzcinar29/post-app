@@ -158,7 +158,7 @@ app.post("/api/add-product", upload.single("file"), async (req, res) => {
       "INSERT INTO products(name,url,price,type,user_id) VALUES ($1,$2,$3,$4,$5)",
       [name, url, price, type, loginId]
     );
-    res.redirect(`${process.env.VERCEL_URL}`);
+    res.redirect("https://post-app-roan.vercel.app");
   } catch (err) {
     console.log(err);
   }
@@ -194,7 +194,7 @@ app.post("/api/add-to-cart", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-  res.redirect(`${process.env.VERCEL_URL}`);
+  res.redirect("https://post-app-roan.vercel.app");
 });
 
 app.get("/api/get-all-carts", async (req, res) => {
@@ -301,14 +301,14 @@ app.post("/api/add-categorie", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-  res.redirect(`${process.env.VERCEL_URL}`);
+  res.redirect("https://post-app-roan.vercel.app");
 });
 
 app.post("/api/delete-categorie", async (req, res) => {
   const id = req.body.id;
   try {
     await db.query("DELETE FROM categories WHERE id=($1)", [id]);
-    res.redirect(`${process.env.VERCEL_URL}`);
+    res.redirect("https://post-app-roan.vercel.app");
   } catch (err) {
     console.log(err);
   }
@@ -321,7 +321,7 @@ app.post("/api/edit-category", async (req, res) => {
       changedText,
       id,
     ]);
-    res.redirect(`${process.env.VERCEL_URL}`);
+    res.redirect("https://post-app-roan.vercel.app");
   } catch (err) {
     console.log(err);
   }
@@ -331,7 +331,7 @@ app.post("/api/delete-cart", async (req, res) => {
   const id = req.body.id;
   try {
     await db.query("DELETE FROM carts WHERE id=($1)", [id]);
-    res.redirect(`${process.env.VERCEL_URL}/cart`);
+    res.redirect("https://post-app-roan.vercel.app/cart");
   } catch (err) {
     console.log(err);
   }
@@ -361,7 +361,7 @@ app.post("/api/get-customer-info", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-  res.redirect(`${process.env.VERCEL_URL}/taxs`);
+  res.redirect("https://post-app-roan.vercel.app/taxs");
 });
 
 app.get("/api/exit-clicked", (req, res) => {
