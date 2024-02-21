@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useData } from "../Context/DataContext";
 
@@ -6,11 +6,25 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setExitClicked } = useData();
+
+  const getLogin = (email, password) =>
+    fetch("/https://post-app-ab2l.onrender.com/api/get-user-info", {
+      method: "POST",
+      headers: {
+        "Contact-type": "application/json",
+      },
+      body: JSON.stringify({ email: email, password: password }),
+    })
+      .then((response) => response.json())
+      .then((cas) => console.log(cas));
+
   return (
     <div className="form-container">
       <form
-        action="https://post-app-ab2l.onrender.com/api/get-user-info"
-        method="post"
+        onSubmit={(e) => {
+          e.preventDefault();
+          getLogin(email, password);
+        }}
         className="form"
       >
         <div className="box">
