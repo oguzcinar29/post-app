@@ -89,7 +89,7 @@ app.post("/api/get-user-info", async (req, res) => {
 
       userName = findItemEmail.username;
       exitClicked = true;
-      res.redirect("/https://post-app-ab2l.onrender.com");
+      res.render("/https://post-app-ab2l.onrender.com");
       logFalseOrTrue = false;
     }
   } catch (err) {
