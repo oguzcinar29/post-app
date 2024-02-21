@@ -94,7 +94,8 @@ app.post("/api/get-user-info", async (req, res) => {
 
       userName = findItemEmail.username;
       exitClicked = true;
-      res.redirect("/");
+      if (process.env.VERCEL_URL) res.redirect(`${process.env.VERCEL_URL}`);
+
       logFalseOrTrue = false;
     }
   } catch (err) {
