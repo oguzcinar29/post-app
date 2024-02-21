@@ -13,20 +13,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("src"));
 const upload = multer({ dest: "uploads/" });
 
-const postgresUrl = process.env.POSTGRES_URL;
+const POSTGRES_URL =
+  "postgres://user1:y3rdTbimHp7ifQiceEAx50SaT7r4vN6P@a.oregon-postgres.render.com:5432/food_1w32";
 
-// Create a new PostgreSQL pool instance
+// Create a new PostgreSQL client instance
 const db = new pg.Client({
-  connectionString: postgresUrl,
-  ssl: false,
+  connectionString: POSTGRES_URL,
+  ssl: {
+    rejectUnauthorized: false, // Required for connecting to Render.com PostgreSQL instances
+  },
 });
+db.connect()
+  .then(() => console.log("connected to database"))
+  .catch((err) => console.error(err));
 
 let loginId;
 let logFalseOrTrue;
 let isPassSame = true;
 let isItLogin = false;
 let loggedIn = false;
-db.connect();
 
 let exitClicked = false;
 
@@ -121,6 +126,10 @@ app.get("/api/get-categories", async (req, res) => {
   }
 });
 
+app.get("/hey", (req, res) => {
+  res.json("ergweg");
+});
+
 app.get("/api/get-single-category", async (req, res) => {
   res.json(tempCategory);
 });
@@ -170,6 +179,16 @@ app.post("/api/add-to-cart", async (req, res) => {
     console.log(err);
   }
   res.redirect("/");
+});
+
+app.get("/api/get-random", async (req, res) => {
+  try {
+    const result = await db.query("SELECT * FROM random");
+    const data = result.rows;
+    res.json(data[0]);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.get("/api/get-all-carts", async (req, res) => {
