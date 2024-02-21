@@ -18,14 +18,35 @@ export default function App() {
     <div className="main-container">
       {isExitClicked ? null : <Navbar />}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/products/:id" element={<Products />} />
-        <Route path="/taxs" element={<Taxs />} />
-        <Route path="/customers" element={<Customers />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/statistics" element={<Statistics />} />
+        <Route path="/https://post-app-ab2l.onrender.com" element={<Home />} />
+        <Route
+          path="/https://post-app-ab2l.onrender.com/cart"
+          element={<Cart />}
+        />
+        <Route
+          path="/https://post-app-ab2l.onrender.com/products/:id"
+          element={<Products />}
+        />
+        <Route
+          path="/https://post-app-ab2l.onrender.com/taxs"
+          element={<Taxs />}
+        />
+        <Route
+          path="/https://post-app-ab2l.onrender.com/customers"
+          element={<Customers />}
+        />
+        <Route
+          path="/https://post-app-ab2l.onrender.com/login"
+          element={<Login />}
+        />
+        <Route
+          path="/https://post-app-ab2l.onrender.com/register"
+          element={<Register />}
+        />
+        <Route
+          path="/https://post-app-ab2l.onrender.com/statistics"
+          element={<Statistics />}
+        />
       </Routes>
     </div>
   );
