@@ -38,7 +38,10 @@ export default function Navbar1() {
           className="bg-body-tertiary mb-3"
         >
           <Container fluid>
-            <Link style={{ textDecoration: "none", color: "black" }} to="/">
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/https://post-app-ab2l.onrender.com"
+            >
               <h1>LOGO</h1>
             </Link>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -77,7 +80,7 @@ export default function Navbar1() {
                         ? "make-blue nav-link"
                         : "nav-link"
                     }
-                    to="/"
+                    to="/https://post-app-ab2l.onrender.com"
                   >
                     <HomeOutlinedIcon className="icon" />
                     <p>Home</p>
@@ -89,7 +92,7 @@ export default function Navbar1() {
                         ? "make-blue nav-link"
                         : "nav-link"
                     }
-                    to="/cart"
+                    to="/https://post-app-ab2l.onrender.com/cart"
                   >
                     <Badge badgeContent={backendCart.length} color="error">
                       <LocalGroceryStoreOutlinedIcon
@@ -106,7 +109,7 @@ export default function Navbar1() {
                         ? "make-blue nav-link"
                         : "nav-link"
                     }
-                    to="/taxs"
+                    to="/https://post-app-ab2l.onrender.com/taxs"
                   >
                     <ReceiptLongOutlinedIcon className="icon" />
                     <p>Taxs</p>
@@ -118,7 +121,7 @@ export default function Navbar1() {
                         ? "make-blue nav-link"
                         : "nav-link"
                     }
-                    to="/customers"
+                    to="/https://post-app-ab2l.onrender.com/customers"
                   >
                     <PersonOutlineOutlinedIcon className="icon" />
                     <p>Customers</p>
@@ -130,7 +133,7 @@ export default function Navbar1() {
                         ? "make-blue nav-link"
                         : "nav-link"
                     }
-                    to="/statistics"
+                    to="/https://post-app-ab2l.onrender.com/statistics"
                   >
                     <AssessmentOutlinedIcon className="icon" />
                     <p>Statistics</p>
@@ -146,7 +149,7 @@ export default function Navbar1() {
                         ? "make-blue nav-link"
                         : "nav-link"
                     }
-                    to="/login"
+                    to="/https://post-app-ab2l.onrender.com/login"
                   >
                     <ExitToAppOutlinedIcon className="icon" />
                     <p>Exit</p>
