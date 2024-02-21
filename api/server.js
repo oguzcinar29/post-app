@@ -94,7 +94,7 @@ app.post("/api/get-user-info", async (req, res) => {
 
       userName = findItemEmail.username;
       exitClicked = true;
-
+      res.redirect("/");
       logFalseOrTrue = false;
     }
   } catch (err) {

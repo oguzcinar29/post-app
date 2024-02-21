@@ -149,7 +149,7 @@ export default function Navbar1() {
                         ? "make-blue nav-link"
                         : "nav-link"
                     }
-                    to="/https://post-app-ab2l.onrender.com/login"
+                    to="/login"
                   >
                     <ExitToAppOutlinedIcon className="icon" />
                     <p>Exit</p>

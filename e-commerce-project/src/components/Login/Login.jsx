@@ -7,7 +7,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const { setExitClicked } = useData();
 
-  const getLogin = (email, password) =>
+  const getLogin = (email, password) => {
     fetch("/https://post-app-ab2l.onrender.com/api/get-user-info", {
       method: "POST",
       headers: {
@@ -17,6 +17,7 @@ export default function Login() {
     })
       .then((response) => response.json())
       .then((cas) => console.log(cas));
+  };
 
   return (
     <div className="form-container">
