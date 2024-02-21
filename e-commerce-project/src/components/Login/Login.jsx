@@ -45,7 +45,9 @@ export default function Login() {
       </form>
       <div className="login-register-box">
         <h5>You have no account ? </h5>
-        <Link to="/register">Create one</Link>
+        <Link to="/https://post-app-ab2l.onrender.com/register">
+          Create one
+        </Link>
       </div>
     </div>
   );
