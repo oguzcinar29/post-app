@@ -181,16 +181,6 @@ app.post("/api/add-to-cart", async (req, res) => {
   res.redirect("/");
 });
 
-app.get("/api/get-random", async (req, res) => {
-  try {
-    const result = await db.query("SELECT * FROM random");
-    const data = result.rows;
-    res.json(data[0]);
-  } catch (err) {
-    console.log(err);
-  }
-});
-
 app.get("/api/get-all-carts", async (req, res) => {
   try {
     const result2 = await db.query(
@@ -360,6 +350,30 @@ app.post("/api/get-customer-info", async (req, res) => {
 
 app.get("/api/exit-clicked", (req, res) => {
   res.json(exitClicked);
+});
+app.get("/api/products1", async (req, res) => {
+  try {
+    const result = await db.query("SELECT * FROM products");
+    res.json(result.rows);
+  } catch (err) {
+    console.log(err);
+  }
+});
+app.get("/api/users1", async (req, res) => {
+  try {
+    const result = await db.query("SELECT * FROM users");
+    res.json(result.rows);
+  } catch (err) {
+    console.log(err);
+  }
+});
+app.get("/api/categories1", async (req, res) => {
+  try {
+    const result = await db.query("SELECT * FROM categories");
+    res.json(result.rows);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.listen(port, () => {
