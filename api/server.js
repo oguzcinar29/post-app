@@ -152,7 +152,7 @@ app.get("/api/get-single-category", async (req, res) => {
 
 app.post("/api/add-product", upload.single("file"), async (req, res) => {
   const { name, url, price, type } = req.body;
-
+  console.log("hey");
   try {
     await db.query(
       "INSERT INTO products(name,url,price,type,user_id) VALUES ($1,$2,$3,$4,$5)",
@@ -301,7 +301,7 @@ app.post("/api/add-categorie", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-  res.redirect("/");
+  res.redirect(`${process.env.VERCEL_URL}`);
 });
 
 app.post("/api/delete-categorie", async (req, res) => {
