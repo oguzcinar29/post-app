@@ -78,7 +78,7 @@ export default function CategoriesHome() {
           <Box sx={{ ...style, width: 400 }}>
             <h4 id="parent-modal-title">Add a category right here</h4>
             <form
-              action="/api/add-categorie"
+              action="https://post-app-ab2l.onrender.com/api/add-categorie"
               method="post"
               className="add-form"
             >
@@ -124,7 +124,7 @@ export default function CategoriesHome() {
                       </div>
                       <div className="buttons-side">
                         <form
-                          action="/api/edit-category"
+                          action="https://post-app-ab2l.onrender.com/api/edit-category"
                           method="post"
                           className="edit-form"
                         >
@@ -150,7 +150,7 @@ export default function CategoriesHome() {
                           </button>
                         </form>
                         <form
-                          action="/api/delete-categorie"
+                          action="https://post-app-ab2l.onrender.com/api/delete-categorie"
                           method="post"
                           className="delete-form"
                         >

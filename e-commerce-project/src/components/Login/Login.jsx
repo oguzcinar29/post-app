@@ -8,7 +8,11 @@ export default function Login() {
   const { setExitClicked } = useData();
   return (
     <div className="form-container">
-      <form action="/api/get-user-info" method="post" className="form">
+      <form
+        action="https://post-app-ab2l.onrender.com/api/get-user-info"
+        method="post"
+        className="form"
+      >
         <div className="box">
           <label>Email: </label>
           <input

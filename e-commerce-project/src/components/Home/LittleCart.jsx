@@ -51,7 +51,10 @@ export default function LittleCart() {
               <button className="last-cart-button">
                 <Link to="/cart">Give a order</Link>
               </button>
-              <form action="/api/clear-carts" method="post">
+              <form
+                action="https://post-app-ab2l.onrender.com/api/clear-carts"
+                method="post"
+              >
                 <button
                   className="last-cart-button clear"
                   onClick={() => (window.parent.location = document.referrer)}

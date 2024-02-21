@@ -16,7 +16,10 @@ export default function CartItems({ id, url, name, type, price, count }) {
         ${price}
       </p>
       <div className="buttons">
-        <form action="/api/edit-little-cart" method="post">
+        <form
+          action="https://post-app-ab2l.onrender.com/api/edit-little-cart"
+          method="post"
+        >
           <button type="submit" name="button" value="decrease">
             <RemoveCircleOutlineOutlinedIcon />
           </button>
@@ -33,7 +36,10 @@ export default function CartItems({ id, url, name, type, price, count }) {
       <p style={{ width: "150px", textAlign: "center" }} className="total">
         ${price * count}
       </p>
-      <form action="/api/delete-cart" method="post">
+      <form
+        action="https://post-app-ab2l.onrender.com/api/delete-cart"
+        method="post"
+      >
         <input id="delete-btn" type="submit" value="delete" />
         <input type="hidden" name="id" value={id} />
       </form>

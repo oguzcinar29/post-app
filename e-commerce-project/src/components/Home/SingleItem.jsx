@@ -8,7 +8,10 @@ export default function SingleItem({ id, name, url, price, type }) {
 
   return (
     <>
-      <form action="/api/add-to-cart" method="post">
+      <form
+        action="https://post-app-ab2l.onrender.com/api/add-to-cart"
+        method="post"
+      >
         <button
           type="submit"
           onClick={() => {

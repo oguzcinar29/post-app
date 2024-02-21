@@ -93,7 +93,7 @@ export default function Cart() {
               >
                 <Box sx={style}>
                   <form
-                    action="/api/get-customer-info"
+                    action="https://post-app-ab2l.onrender.com/api/get-customer-info"
                     method="post"
                     className="tired-form"
                   >

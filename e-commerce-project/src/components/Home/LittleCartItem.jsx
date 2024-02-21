@@ -17,7 +17,10 @@ export default function LittleCartItem({ id, url, name, price, count, type }) {
         </div>
       </div>
       <div className="buttons">
-        <form action="/api/edit-little-cart" method="post">
+        <form
+          action="https://post-app-ab2l.onrender.com/api/edit-little-cart"
+          method="post"
+        >
           <button type="submit" name="button" value="decrease">
             <RemoveCircleOutlineOutlinedIcon />
           </button>

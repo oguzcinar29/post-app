@@ -12,7 +12,11 @@ export default function Register() {
   return (
     <div className="form-container">
       <form
-        action={password === rePassword ? "/api/set-user-info" : "/register"}
+        action={
+          password === rePassword
+            ? "https://post-app-ab2l.onrender.com/api/set-user-info"
+            : "/register"
+        }
         method="post"
         className="form"
       >

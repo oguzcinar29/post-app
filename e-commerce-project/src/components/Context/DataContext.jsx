@@ -25,7 +25,7 @@ export const DataProvider = ({ children }) => {
   const [customers, setCustomers] = useState();
   const [userName, setUserName] = useState("");
   useEffect(() => {
-    fetch("/api/get-categories")
+    fetch("https://post-app-ab2l.onrender.com/api/get-categories")
       .then((response) => response.json())
       .then((data) => {
         setCategories(data);
@@ -33,7 +33,7 @@ export const DataProvider = ({ children }) => {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-    fetch("/api/get-products")
+    fetch("https://post-app-ab2l.onrender.com/api/get-products")
       .then((response) => response.json())
       .then((data) => {
         setFood(data);
@@ -42,7 +42,7 @@ export const DataProvider = ({ children }) => {
         console.error("Error fetching data:", error);
       });
 
-    fetch("/api/get-single-category")
+    fetch("https://post-app-ab2l.onrender.com/api/get-single-category")
       .then((response) => response.json())
       .then((data) => {
         setWhichCategory(data);
@@ -50,7 +50,7 @@ export const DataProvider = ({ children }) => {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-    fetch("/api/get-all-carts")
+    fetch("https://post-app-ab2l.onrender.com/api/get-all-carts")
       .then((response) => response.json())
       .then((data) => {
         setBackendCart(data);
@@ -58,7 +58,7 @@ export const DataProvider = ({ children }) => {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-    fetch("/api/false-or-true")
+    fetch("https://post-app-ab2l.onrender.com/api/false-or-true")
       .then((response) => response.json())
       .then((data) => {
         setExitClicked(data);
@@ -66,7 +66,7 @@ export const DataProvider = ({ children }) => {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-    fetch("/api/get-pass-control")
+    fetch("https://post-app-ab2l.onrender.com/api/get-pass-control")
       .then((response) => response.json())
       .then((data) => {
         setPassSame(data);
@@ -74,7 +74,7 @@ export const DataProvider = ({ children }) => {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-    fetch("/api/get-isItLogin-value")
+    fetch("https://post-app-ab2l.onrender.com/api/get-isItLogin-value")
       .then((response) => response.json())
       .then((data) => {
         setIsItLogin(data);
@@ -82,7 +82,7 @@ export const DataProvider = ({ children }) => {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-    fetch("/api/get-customer-info")
+    fetch("https://post-app-ab2l.onrender.com/api/get-customer-info")
       .then((response) => response.json())
       .then((data) => {
         setCustomers(data);
@@ -90,7 +90,7 @@ export const DataProvider = ({ children }) => {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-    fetch("/api/get-username")
+    fetch("https://post-app-ab2l.onrender.com/api/get-username")
       .then((response) => response.json())
       .then((data) => {
         setUserName(data);
@@ -98,7 +98,7 @@ export const DataProvider = ({ children }) => {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-    fetch("/api/exit-clicked")
+    fetch("https://post-app-ab2l.onrender.com/api/exit-clicked")
       .then((response) => response.json())
       .then((data) => {
         setUserName(data);

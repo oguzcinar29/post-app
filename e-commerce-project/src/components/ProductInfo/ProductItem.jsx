@@ -45,7 +45,10 @@ export default function ProductItem({ id, name, url, price, type }) {
           <Box sx={style}>
             <div className="product-add-box">
               <h4>Upgrade the item</h4>
-              <form action="/api/edit-product" method="post">
+              <form
+                action="https://post-app-ab2l.onrender.com/api/edit-product"
+                method="post"
+              >
                 <input name="id" value={id} type="hidden" />
                 <input
                   name="category"
@@ -98,7 +101,10 @@ export default function ProductItem({ id, name, url, price, type }) {
             </div>
           </Box>
         </Modal>
-        <form action="/api/delete-product" method="post">
+        <form
+          action="https://post-app-ab2l.onrender.com/api/delete-product"
+          method="post"
+        >
           <input type="hidden" name="category" value={whichCategoryClicked} />
           <button id="delete-product-item" type="submit" name="id" value={id}>
             Delete

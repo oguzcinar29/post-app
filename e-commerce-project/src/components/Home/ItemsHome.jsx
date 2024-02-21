@@ -71,7 +71,10 @@ export default function ItemsHome() {
               <Box sx={style}>
                 <div className="product-add-box">
                   <h4>Add new product</h4>
-                  <form action="/api/add-product" method="post">
+                  <form
+                    action="https://post-app-ab2l.onrender.com/api/add-product"
+                    method="post"
+                  >
                     <div className="product-input">
                       <p>Product Name: </p>
                       <input
