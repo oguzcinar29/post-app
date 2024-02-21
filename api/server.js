@@ -62,7 +62,9 @@ app.post("/api/set-user-info", async (req, res) => {
       console.log(err);
     }
 
-    res.redirect("/login");
+    const temp = getBaseUrl();
+    console.log(temp);
+    res.redirect(`${process.env.VERCEL_URL}/login`);
   } catch (err) {
     console.log(err);
   }
@@ -87,7 +89,7 @@ app.post("/api/get-user-info", async (req, res) => {
       typeof findItemEmail === "undefined" ||
       typeof findItemPassword === "undefined"
     ) {
-      res.redirect("/login");
+      res.redirect(`${process.env.VERCEL_URL}/login`);
       logFalseOrTrue = true;
     } else {
       loginId = findItemEmail.id;
@@ -152,7 +154,7 @@ app.post("/api/add-product", upload.single("file"), async (req, res) => {
       "INSERT INTO products(name,url,price,type,user_id) VALUES ($1,$2,$3,$4,$5)",
       [name, url, price, type, loginId]
     );
-    res.redirect("/");
+    res.redirect(`${process.env.VERCEL_URL}`);
   } catch (err) {
     console.log(err);
   }
@@ -188,7 +190,7 @@ app.post("/api/add-to-cart", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-  res.redirect("/");
+  res.redirect(`${process.env.VERCEL_URL}`);
 });
 
 app.get("/api/get-all-carts", async (req, res) => {
@@ -207,7 +209,7 @@ app.get("/api/get-all-carts", async (req, res) => {
 app.post("/api/clear-carts", async (req, res) => {
   try {
     await db.query("DELETE FROM carts WHERE user_id=($1)", [loginId]);
-    res.redirect("/");
+    res.redirect(`${process.env.VERCEL_URL}`);
   } catch (err) {
     console.log(err);
   }
@@ -278,7 +280,7 @@ app.post("/api/delete-product", async (req, res) => {
   tempCategory = category;
   try {
     await db.query("DELETE FROM products WHERE id=($1)", [id]);
-    res.redirect(`/products/${category}`);
+    res.redirect(`${process.env.VERCEL_URL}/products/${category}`);
   } catch (err) {
     console.log(err);
   }
@@ -302,7 +304,7 @@ app.post("/api/delete-categorie", async (req, res) => {
   const id = req.body.id;
   try {
     await db.query("DELETE FROM categories WHERE id=($1)", [id]);
-    res.redirect("/");
+    res.redirect(`${process.env.VERCEL_URL}`);
   } catch (err) {
     console.log(err);
   }
@@ -315,7 +317,7 @@ app.post("/api/edit-category", async (req, res) => {
       changedText,
       id,
     ]);
-    res.redirect("/");
+    res.redirect(`${process.env.VERCEL_URL}`);
   } catch (err) {
     console.log(err);
   }
@@ -325,7 +327,7 @@ app.post("/api/delete-cart", async (req, res) => {
   const id = req.body.id;
   try {
     await db.query("DELETE FROM carts WHERE id=($1)", [id]);
-    res.redirect("/cart");
+    res.redirect(`${process.env.VERCEL_URL}/cart`);
   } catch (err) {
     console.log(err);
   }
@@ -355,7 +357,7 @@ app.post("/api/get-customer-info", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-  res.redirect("/taxs");
+  res.redirect(`${process.env.VERCEL_URL}/taxs`);
 });
 
 app.get("/api/exit-clicked", (req, res) => {
@@ -401,6 +403,7 @@ app.get("/api/carts1", async (req, res) => {
     console.log(err);
   }
 });
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
