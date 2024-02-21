@@ -91,7 +91,7 @@ app.post("/api/get-user-info", async (req, res) => {
       typeof findItemEmail === "undefined" ||
       typeof findItemPassword === "undefined"
     ) {
-      res.redirect(`"${process.env.VERCEL_URL}"/login`);
+      res.redirect(process.env.VERCEL_URL + "/login");
       logFalseOrTrue = true;
     } else {
       loginId = findItemEmail.id;
