@@ -3,6 +3,11 @@ import pg from "pg";
 import bodyParser from "body-parser";
 import multer from "multer";
 import dot from "dotenv";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 dot.config();
 
 const app = express();
@@ -89,7 +94,8 @@ app.post("/api/get-user-info", async (req, res) => {
 
       userName = findItemEmail.username;
       exitClicked = true;
-      res.render("/https://post-app-ab2l.onrender.com");
+      res.sendFile(join(__dirname, "public", "index.html"));
+
       logFalseOrTrue = false;
     }
   } catch (err) {
