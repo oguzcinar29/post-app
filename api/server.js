@@ -91,8 +91,8 @@ app.post("/api/get-user-info", async (req, res) => {
       typeof findItemEmail === "undefined" ||
       typeof findItemPassword === "undefined"
     ) {
-      res.redirect("https://post-app-roan.vercel.app/login");
       logFalseOrTrue = true;
+      res.redirect("https://post-app-roan.vercel.app/login");
     } else {
       loginId = findItemEmail.id;
 
