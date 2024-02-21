@@ -95,7 +95,9 @@ app.post("/api/get-user-info", async (req, res) => {
       loginId = findItemEmail.id;
 
       userName = findItemEmail.username;
+
       exitClicked = true;
+
       res.redirect("https://post-app-roan.vercel.app");
 
       logFalseOrTrue = false;
