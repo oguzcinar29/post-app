@@ -375,7 +375,22 @@ app.get("/api/categories1", async (req, res) => {
     console.log(err);
   }
 });
-
+app.get("/api/customers1", async (req, res) => {
+  try {
+    const result = await db.query("SELECT * FROM customers");
+    res.json(result.rows);
+  } catch (err) {
+    console.log(err);
+  }
+});
+app.get("/api/carts1", async (req, res) => {
+  try {
+    const result = await db.query("SELECT * FROM carts");
+    res.json(result.rows);
+  } catch (err) {
+    console.log(err);
+  }
+});
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
