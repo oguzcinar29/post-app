@@ -63,6 +63,10 @@ app.post("/api/set-user-info", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.json("hello");
+});
+
 app.post("/api/get-user-info", async (req, res) => {
   isItLogin = true;
   const { email, password } = req.body;
