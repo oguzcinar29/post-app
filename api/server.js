@@ -5,6 +5,7 @@ import multer from "multer";
 import dot from "dotenv";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
+import cors from "cors";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,6 +17,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("src"));
+app.use(cors());
 const upload = multer({ dest: "uploads/" });
 
 const POSTGRES_URL =
